@@ -1,0 +1,52 @@
+CREATE Religion 3 string int bool name num beard
+INSERT INTO Religion 5 ROWS
+Hindu 1 true
+Islam 2 true
+Jewism 3 true
+Christian 4 false
+Buddhist 5 false
+CREATE Food 3 string int bool name num good
+INSERT INTO Food 5 ROWS
+BTB 1 true
+PitaK 2 false
+PBobs 3 false
+Panch 4 true
+HSeoul 5 true
+CREATE Music 3 string int bool name num good
+INSERT INTO Music 5 ROWS
+Trav 1 true
+Nav 2 false
+BBG 3 false
+Carti 4 true
+Yeat 5 true
+GENERATE FOR Religion hash INDEX ON beard
+PRINT FROM Religion 2 name beard WHERE beard = true
+PRINT FROM Religion 2 name num WHERE num > 2
+JOIN Religion AND Music WHERE beard = good AND PRINT 3 name 1 num 2 name 2
+INSERT INTO Religion 2 ROWS
+Hindu 1 true
+Islam 2 true
+JOIN Religion AND Music WHERE num = num AND PRINT 3 name 1 num 2 name 2
+DELETE FROM Religion WHERE beard = true
+DELETE FROM Food WHERE good = false
+PRINT FROM Food 2 name num WHERE num > 2
+PRINT FROM Religion 2 name num WHERE beard = false
+JOIN Religion AND Food WHERE num = num AND PRINT 3 name 1 num 2 name 2
+GENERATE FOR Music bst INDEX ON num
+INSERT INTO Music 2 ROWS
+Trav 1 true
+Nav 2 false
+INSERT INTO Food 2 ROWS
+BTB 1 true
+PitaK 2 false
+GENERATE FOR Music bst INDEX ON nume
+PRINT FROM Music 2 name num WHERE num < 10
+JOIN Religion AND Music WHERE beard = good AND PRINT 3 name 1 num 2 name 2
+GENERATE FOR Religion bst INDEX ON beard
+GENERATE FOR Music hash INDEX ON num
+PRINT FROM Religion 2 name beard WHERE beard = true
+JOIN Religion AND Music WHERE num = num AND PRINT 3 name 1 num 2 name 2
+REMOVE Religion
+REMOVE Music
+REMOVE Food
+QUIT

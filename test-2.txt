@@ -1,0 +1,38 @@
+# Checkpoint file 2: # (comment), CREATE, INSERT, PRINT ... ALL, REMOVE, QUIT
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 7 ROWS
+Ann_Arbor Michigan 120782 28.69 false
+Lansing Michigan 116020 36.68 true
+Miami Florida 453579 55.25 false
+San_Francisco California 864816 46.87 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 false
+St_Louis Missouri 315685 65.98 false
+INSERT INTO cities 2 ROWS
+Yarm Psu 2300 1000 false
+David Mari 8 4 false
+INSERT INTO citie 7 ROWS
+Ann_Arbor Michigan 120782 28.69 false
+Lansing Michigan 116020 36.68 true
+INSERT INTO citie 7 ROWS
+PRINT FROM cities 3 name state area WHERE area > 250
+GENERATE FOR cities bst INDEX ON is_capital?
+DELETE FROM cities WHERE is_capital? = false
+DELETE FROM cities WHERE is_capital? = true
+DELETE FROM cities WHERE is_capital? = true
+PRINT FROM cities 3 name state area WHERE area > 250
+PRINT FROM cities 3 name state area WHERE area < 250
+GENERATE FOR cities hash INDEX ON is_capital?
+GENERATE FOR cities hash INDEX ON name
+GENERATE FOR cities best INDEX ON state
+GENERATE FOR cities best INDEX ON population
+INSERT INTO cities 2 ROWS
+Yarmt Psi 23000 10000 false
+David DaMari 80 40 false
+INSERT INTO cities 2 ROWS
+Yarmt Psi 23000 10000 false
+David DaMari 80 40 false
+PRINT FROM cities 3 name state area WHERE is_capital? = false
+REMOVE cities
+PRINT FROM cities 3 name state area WHERE area > 250
+QUIT

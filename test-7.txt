@@ -1,0 +1,68 @@
+CREATE c1 3 int int bool name num beard
+INSERT INTO c1 5 ROWS
+1 -1 true
+2 -2 false
+3 3 true
+-4 4 false
+5 5 true
+GENERATE FOR c bst INDEX ON beard
+GENERATE FOR c1 bst INDEX ON beards
+GENERATE FOR c1 bst INDEX ON beard
+PRINT FROM c1 2 name beard WHERE name > 0
+INSERT INTO c1 10 ROWS
+10 10 true
+-10 -10 true
+-10 10 true
+10 -10 true
+10 10 true
+-10 -10 false
+-10 10 false
+10 -10 false
+10 10 false
+10 10 false
+GENERATE FOR c1 hash INDEX ON num
+PRINT FROM c1 2 name beard WHERE num > 0
+DELETE FROM c1 WHERE num > 0
+PRINT FROM c1 2 name beard WHERE num > 0
+DELETE FROM c1 WHERE num = 0
+PRINT FROM c1 2 name beard ALL
+PRINT FROM c1 2 name beard WHERE num = 0
+DELETE FROM c1 WHERE num < 0
+INSERT INTO c1 10 ROWS
+10 10 true
+-10 -10 true
+-10 10 true
+10 -10 true
+10 10 true
+-10 -10 false
+-10 10 false
+10 -10 false
+10 10 false
+10 10 false
+PRINT FROM c1 2 name beard WHERE name > 0
+DELETE FROM c1 WHERE name > 0
+PRINT FROM c1 2 name beard WHERE name > 0
+DELETE FROM c1 WHERE name = 0
+PRINT FROM c1 2 name beard ALL
+PRINT FROM c1 2 name beard WHERE name = 0
+DELETE FROM c1 WHERE name < 0
+INSERT INTO c1 10 ROWS
+10 10 true
+-10 -10 true
+-10 10 true
+10 -10 true
+10 10 true
+-10 -10 false
+-10 10 false
+10 -10 false
+10 10 false
+10 10 false
+PRINT FROM c1 3 name num beard WHERE beard > true
+PRINT FROM c1 3 name num beard WHERE beard = true
+PRINT FROM c1 3 name num beard WHERE beard < true
+DELETE FROM c1 WHERE beard < true
+DELETE FROM c1 WHERE beard > true
+PRINT FROM c1 3 name num beard WHERE beard = true
+DELETE FROM c1 WHERE beard = true
+REMOVE c1
+QUIT

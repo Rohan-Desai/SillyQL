@@ -1,0 +1,41 @@
+CREATE tab 3 string string double fCol sCol tCol
+GENERATE FOR tab bst INDEX ON fCol
+GENERATE FOR tab bst INDEX ON tCol
+PRINT FROM tab 3 fCol sCol tCol ALL
+INSERT INTO tab 5 ROWS
+hello bye 1.0
+hello cya 1.0
+cya hello 1.2
+yeer ahh 23.5
+fing ington 2323.1212
+PRINT FROM tab 3 fCol sCol tCol WHERE fCol = hella
+PRINT FROM tab 3 fCol sCol tCol WHERE fCol > hella
+PRINT FROM tab 3 fCol sCol tCol WHERE fCol < hella
+PRINT FROM tab 3 fCol sCol tCol WHERE tCol = 1.2
+PRINT FROM tab 3 fCol sCol tCol WHERE tCol > 1.2
+PRINT FROM tab 3 fCol sCol tCol WHERE tCol < 1.2
+CREATE tab2 3 string string double fCol sCol tCol
+INSERT INTO tab2 5 ROWS
+hella bye 1.3
+hella cya 1.3
+cyas hello 1.5
+yeesr sdhh 23.63
+fing ington 2323.12134
+GENERATE FOR tab2 bst INDEX ON sCol
+JOIN tab AND tab2 WHERE sCol = sCol AND PRINT 3 fCol 1 sCol 2 fCol 2
+DELETE FROM tab WHERE fCol > yes
+PRINT FROM tab 3 fCol sCol tCol ALL
+DELETE FROM tab WHERE fCol < yes
+PRINT FROM tab 3 fCol sCol tCol ALL
+DELETE FROM tab WHERE fCol = yes
+PRINT FROM tab 3 fCol sCol tCol ALL
+DELETE FROM tab2 WHERE tCol > 10
+PRINT FROM tab2 3 fCol sCol tCol ALL
+DELETE FROM tab2 WHERE tCol < 10
+PRINT FROM tab2 3 fCol sCol tCol ALL
+PRINT FROM tab3 3 fCol sCol tCol ALL
+DELETE FROM tab4 WHERE fCol < yes
+INSERT INTO tab3 5 ROWS
+REMOVE tab1 sd asd sad 
+REMOVE tab
+QUIT

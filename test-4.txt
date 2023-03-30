@@ -1,0 +1,38 @@
+# Checkpoint file 2: # (comment), CREATE, INSERT, PRINT ... ALL, REMOVE, QUIT
+CREATE isOdd 2 int bool num odd
+CREATE isEven 2 int bool num even
+INSERT INTO isOdd 7 ROWS
+1 true
+2 false
+3 true
+4 false
+5 true
+6 false
+7 true
+PRINT FROM isOdd 2 num odd ALL
+INSERT INTO isEven 7 ROWS
+1 false
+2 true
+3 false
+4 true
+5 false
+6 true
+7 false
+INSERT INTO isEven 2 ROWS
+8 true
+9 false
+PRINT FROM isEven 2 num even ALL
+GENERATE FOR isOdd bst INDEX ON num
+DELETE FROM isOdd WHERE num = 1
+DELETE FROM isOdd WHERE num = 2
+DELETE FROM isOdd WHERE num = 3
+DELETE FROM isOdd WHERE num = 4
+DELETE FROM isOdd WHERE odd = true
+GENERATE FOR isOdd bst INDEX ON num
+INSERT INTO isOdd 2 ROWS
+10 false
+11 true
+JOIN isOdd AND isEven WHERE num = num AND PRINT 3 num 1 even 2 odd 1
+REMOVE isEven
+REMOVE isOdd
+QUIT

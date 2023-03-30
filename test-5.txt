@@ -1,0 +1,49 @@
+# Checkpoint file 2: # (comment), CREATE, INSERT, PRINT ... ALL, REMOVE, QUIT
+CREATE People 3 string int bool name age beard
+INSERT INTO People 7 ROWS
+Huck 19 true
+Fonz 19 true
+dev 19 false
+Brian 20 false
+smulsky 21 false
+Flem 19 false
+cifu 20 false
+CREATE morePeople 3 string int bool name age gay
+INSERT INTO morePeople 7 ROWS
+Huck 19 true
+Fonz 19 true
+dev 19 true
+Brian 20 true
+smulsky 21 true
+Flem 19 true
+cifu 20 true
+PRINT FROM People 2 name age WHERE age = 21
+PRINT FROM People 2 name age WHERE age = 20
+PRINT FROM People 2 name age WHERE age = 19
+JOIN People AND morePeople WHERE beard = gay AND PRINT 3 name 1 age 2 beard 1
+GENERATE FOR People bst INDEX ON age
+GENERATE FOR People bst INDEX ON age
+JOIN People AND morePeople WHERE beard = gay AND PRINT 3 name 1 age 2 beard 1
+PRINT FROM People 2 name age WHERE age > 21
+PRINT FROM People 2 name age WHERE age = 20
+PRINT FROM People 2 name age WHERE age > 19
+PRINT FROM People 2 name age WHERE age = 19
+DELETE FROM People WHERE name = Huck
+DELETE FROM People WHERE name = Huck
+JOIN People AND morePeople WHERE beard = gay AND PRINT 3 name 1 age 2 beard 1
+PRINT FROM People 2 name age WHERE age = 19
+INSERT INTO People 2 ROWS
+Omar 21 true
+viyan 21 true
+PRINT FROM People 2 name age WHERE age = 21
+PRINT FROM People 2 name age WHERE age > 20
+PRINT FROM People 2 name age WHERE age = 19
+JOIN People AND morePeople WHERE beard = gay AND PRINT 3 name 1 age 2 beard 1
+GENERATE FOR People hash INDEX ON name
+GENERATE FOR People hash INDEX ON name
+JOIN People AND morePeople WHERE beard = gay AND PRINT 3 name 1 age 2 beard 1
+PRINT FROM People 2 name age WHERE age < 21
+PRINT FROM People 2 name age WHERE age = 20
+PRINT FROM People 2 name age WHERE age > 19
+REMOVE People
+QUIT
